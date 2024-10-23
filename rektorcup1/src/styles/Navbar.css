@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: linear-gradient(to right, #498099, #02485A, #26E5D3);
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    position: relative;
+    box-shadow: #22070c1a 0px 4px 8px; /* Slight shadow for depth */
+    z-index: 4;
+}
+
+.left {
+    display: flex;
+    flex-basis: 50%;
+    margin-left: 2%;
+    z-index: 6;
+}
+
+.right {
+    align-items: center;
+    justify-content: end;
+    display: flex;
+    flex-basis: 50%;
+    margin-right: 5%;
+    gap: 20px; 
+    text-decoration: none;
+    color: white;
+    font-family: 'ClementePDam', sans-serif;
+}
+
+.right a {
+    text-decoration: none;
+    background-image: linear-gradient(to right, #fab035, #fede75, #fab035);
+    border: 2px solid #e0523b;
+    border-radius: 20px;
+    transition: 0.3s; 
+    padding: 5px 15px; 
+    color: rgb(10, 10, 10);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.right a:hover {
+    color: rgb(251, 239, 212);
+}
+
+.burger {
+    color: rgba(255, 209, 47, 1);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 7;
+}
+
+/* Show burger menu button only on smaller screens */
+@media (max-width: 640px) {
+    .navbar button {
+        display: block;
+        transform: scale(1.5);
+    }
+
+    .right {
+        display: none; /* Hide desktop navigation */
+    }
+
+    .navbar #open {
+        display: flex;
+        flex-direction: column;
+        animation: slideIn 0.5s;
+    }
+
+    .navbar #close {
+        flex-direction: column;
+        transition: 0.5s;
+    }
+}
+
+/* Keyframes for animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
